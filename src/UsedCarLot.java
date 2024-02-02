@@ -19,7 +19,10 @@ public class UsedCarLot {
     public boolean swap(int idxOne, int idxTwo) {
         if ((idxOne < 0 || idxOne >= inventory.size()) || (idxTwo < 0 || idxTwo >= inventory.size())) {
             return false;
+        } else {
+            Car temp = inventory.set(idxOne, inventory.get(idxTwo));
+            inventory.set(idxTwo, temp);
+            return true;
         }
     }
-
 }
